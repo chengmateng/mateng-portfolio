@@ -1,0 +1,773 @@
+---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Finite Element Heat Conduction Analysis of a Turbine Blade | Mateng Cheng</title>
+		<meta
+			name="description"
+			content="Finite element heat conduction analysis of a turbine blade using MATLAB, Galerkin's method, triangular elements, and ABAQUS validation."
+		/>
+	</head>
+
+	<body>
+		<header class="site-header">
+			<nav>
+				<a href="/" class="logo">Mateng Cheng</a>
+
+				<div class="nav-links">
+					<a href="/">Home</a>
+					<a href="/#projects">Projects</a>
+					<a href="/#contact">Contact</a>
+				</div>
+			</nav>
+		</header>
+
+		<main id="top">
+			<section class="project-hero">
+				<a class="back-link" href="/#projects">← Back to Projects</a>
+
+				<p class="eyebrow">Finite Element Analysis · Heat Conduction · MATLAB / ABAQUS</p>
+
+				<h1>Finite Element Heat Conduction Analysis of a Turbine Blade</h1>
+
+				<p class="hero-text">
+					A finite element analysis project solving a two-dimensional heat conduction problem
+					in one-eighth of a turbine blade using Galerkin’s method, linear triangular elements,
+					MATLAB implementation, and ABAQUS validation.
+				</p>
+
+				<div class="project-meta">
+					<div>
+						<span>Tools</span>
+						<p>MATLAB, ABAQUS</p>
+					</div>
+
+					<div>
+						<span>Methods</span>
+						<p>Galerkin Method, FEM, Heat Transfer</p>
+					</div>
+
+					<div>
+						<span>Institution</span>
+						<p>Columbia University</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="hero-image-grid">
+					<figure class="hero-figure">
+						<img
+							src="/projects/heat-conduction-turbine-blade/fine-temperature-contour-custom.png"
+							alt="Fine mesh temperature contour for turbine blade heat conduction"
+						/>
+						<figcaption>Temperature contour from the fine-mesh MATLAB FEM model.</figcaption>
+					</figure>
+
+					<figure class="hero-figure">
+						<img
+							src="/projects/heat-conduction-turbine-blade/abaqus-fine-temperature-contour-custom.png"
+							alt="ABAQUS fine mesh temperature contour for turbine blade"
+						/>
+						<figcaption>ABAQUS fine-mesh temperature contour used for validation.</figcaption>
+					</figure>
+				</div>
+			</section>
+
+			<section class="section two-column">
+				<div>
+					<h2>Project Overview</h2>
+				</div>
+
+				<div>
+					<p>
+						This project analyzed heat conduction in a turbine blade section by taking advantage
+						of symmetry and modeling one-eighth of the blade. The work derived the strong form,
+						weak form, and finite element discretization of the heat conduction problem, then
+						implemented the numerical solver in MATLAB using linear triangular elements.
+					</p>
+
+					<p>
+						The MATLAB results were compared against ABAQUS simulations under coarse and fine
+						meshes. The comparison included temperature contours, normal heat flux, flux vector
+						fields, and boundary-condition validation. The results show that the MATLAB
+						implementation agrees well with ABAQUS, supporting the accuracy and feasibility of
+						the Galerkin FEM solver.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="stats-grid">
+					<div class="stat-card">
+						<span>Coarse Mesh</span>
+						<strong>267 nodes</strong>
+						<p>Coarse triangular mesh with 455 elements generated from ABAQUS.</p>
+					</div>
+
+					<div class="stat-card">
+						<span>Fine Mesh</span>
+						<strong>1958 nodes</strong>
+						<p>Fine triangular mesh with 2287 elements for convergence comparison.</p>
+					</div>
+
+					<div class="stat-card">
+						<span>Element Type</span>
+						<strong>Linear Triangles</strong>
+						<p>Used three-node triangular elements with linear shape functions.</p>
+					</div>
+
+					<div class="stat-card">
+						<span>Validation</span>
+						<strong>MATLAB vs. ABAQUS</strong>
+						<p>Compared temperature and normal flux results across meshes.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section two-column">
+				<div>
+					<h2>My Role</h2>
+				</div>
+
+				<div>
+					<ul class="role-list">
+						<li>Derived the strong and weak forms for the heat conduction problem.</li>
+						<li>Implemented Galerkin finite element formulation using linear triangular elements.</li>
+						<li>Assembled the global stiffness matrix and force vector in MATLAB.</li>
+						<li>Computed temperature fields and heat flux vector fields for coarse and fine meshes.</li>
+						<li>Compared MATLAB numerical results with ABAQUS FEM simulations.</li>
+						<li>
+							Analyzed mesh refinement, boundary-condition accuracy, and flux singularities near
+							sharp geometry points.
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section two-column">
+				<div>
+					<h2>Mesh Design</h2>
+				</div>
+
+				<div>
+					<p>
+						The turbine blade geometry was discretized using linear triangular elements.
+						Both coarse and fine meshes were used to study convergence behavior and compare
+						the sensitivity of temperature and flux fields to mesh density.
+					</p>
+
+					<div class="inline-gallery">
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/coarse-mesh-custom.png"
+								alt="Coarse triangular mesh for turbine blade"
+							/>
+							<figcaption>Coarse mesh with boundary nodes and triangular elements.</figcaption>
+						</figure>
+
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/fine-mesh-custom.png"
+								alt="Fine triangular mesh for turbine blade"
+							/>
+							<figcaption>Fine mesh used for convergence and validation.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<section class="section two-column">
+				<div>
+					<h2>Temperature & Flux Results</h2>
+				</div>
+
+				<div>
+					<p>
+						The temperature contours from coarse and fine meshes show similar thermal patterns,
+						indicating convergence of the numerical solution. The normal flux results match the
+						boundary condition trend well overall, while sharp geometry points create local
+						singular behavior.
+					</p>
+
+					<div class="inline-gallery">
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/coarse-temperature-contour-custom.png"
+								alt="Temperature contour using coarse mesh"
+							/>
+							<figcaption>Temperature contour using the coarse mesh.</figcaption>
+						</figure>
+
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/normal-flux-comparison-custom.png"
+								alt="Normal flux comparison between calculated and boundary flux"
+							/>
+							<figcaption>Normal flux comparison for coarse and fine meshes.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<section class="section two-column">
+				<div>
+					<h2>MATLAB / ABAQUS Validation</h2>
+				</div>
+
+				<div>
+					<p>
+						To verify the MATLAB implementation, the same heat conduction problem was solved in
+						ABAQUS. The temperature and heat flux contours from ABAQUS were compared with the
+						custom MATLAB FEM results under both coarse and fine mesh settings.
+					</p>
+
+					<div class="inline-gallery">
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/coarse-temperature-validation-custom.png"
+								alt="Coarse mesh temperature validation between MATLAB and ABAQUS"
+							/>
+							<figcaption>Coarse mesh temperature validation between MATLAB and ABAQUS.</figcaption>
+						</figure>
+
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/coarse-normal-flux-validation-custom.png"
+								alt="Coarse mesh normal flux validation between MATLAB and ABAQUS"
+							/>
+							<figcaption>Coarse mesh normal flux validation between MATLAB and ABAQUS.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<section class="section two-column">
+				<div>
+					<h2>Fine Mesh Validation</h2>
+				</div>
+
+				<div>
+					<p>
+						Fine mesh validation was used to further compare the MATLAB Galerkin FEM solver
+						against ABAQUS. The fine mesh results provide a clearer view of convergence and
+						improve the spatial resolution of both temperature and heat flux fields.
+					</p>
+
+					<div class="inline-gallery">
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/fine-temperature-validation-custom.png"
+								alt="Fine mesh temperature validation between MATLAB and ABAQUS"
+							/>
+							<figcaption>Fine mesh temperature validation between MATLAB and ABAQUS.</figcaption>
+						</figure>
+
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/fine-normal-flux-validation-custom.png"
+								alt="Fine mesh normal flux validation between MATLAB and ABAQUS"
+							/>
+							<figcaption>Fine mesh normal flux validation between MATLAB and ABAQUS.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<section class="section two-column">
+				<div>
+					<h2>Algorithm Design</h2>
+				</div>
+
+				<div>
+					<p>
+						The MATLAB solver was organized into pre-processing, analysis, and post-processing
+						steps. The workflow included loading mesh connectivity and node locations,
+						computing local stiffness matrices and force vectors, applying boundary conditions,
+						assembling the global system, and solving for temperature and flux fields.
+					</p>
+
+					<div class="inline-gallery">
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/bandwidth-diagrams-custom.png"
+								alt="Bandwidth diagrams for global stiffness matrix"
+							/>
+							<figcaption>Bandwidth diagrams showing sparsity behavior of the stiffness matrix.</figcaption>
+						</figure>
+
+						<figure>
+							<img
+								src="/projects/heat-conduction-turbine-blade/coarse-flux-field-custom.png"
+								alt="Flux field diagram with coarse mesh"
+							/>
+							<figcaption>Flux vector field computed on the coarse mesh.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-title">
+					<h2>Project Gallery</h2>
+					<p>Mesh diagrams, temperature contours, flux fields, and MATLAB / ABAQUS validation results.</p>
+				</div>
+
+				<div class="gallery-grid">
+					<figure>
+						<img
+							src="/projects/heat-conduction-turbine-blade/temperature-results-comparison-custom.png"
+							alt="Temperature results comparison between coarse and fine meshes"
+						/>
+						<figcaption>Temperature comparison between coarse and fine mesh solutions.</figcaption>
+					</figure>
+
+					<figure>
+						<img
+							src="/projects/heat-conduction-turbine-blade/fine-flux-field-custom.png"
+							alt="Flux field diagram with fine mesh"
+						/>
+						<figcaption>Flux vector field computed on the fine mesh.</figcaption>
+					</figure>
+
+					<figure>
+						<img
+							src="/projects/heat-conduction-turbine-blade/abaqus-coarse-temperature-contour-custom.png"
+							alt="ABAQUS coarse mesh temperature contour"
+						/>
+						<figcaption>ABAQUS coarse mesh temperature contour.</figcaption>
+					</figure>
+
+					<figure>
+						<img
+							src="/projects/heat-conduction-turbine-blade/abaqus-coarse-flux-contour-custom.png"
+							alt="ABAQUS coarse mesh flux contour"
+						/>
+						<figcaption>ABAQUS coarse mesh heat flux contour.</figcaption>
+					</figure>
+
+					<figure>
+						<img
+							src="/projects/heat-conduction-turbine-blade/abaqus-fine-temperature-contour-custom.png"
+							alt="ABAQUS fine mesh temperature contour"
+						/>
+						<figcaption>ABAQUS fine mesh temperature contour.</figcaption>
+					</figure>
+
+					<figure>
+						<img
+							src="/projects/heat-conduction-turbine-blade/abaqus-fine-flux-contour-custom.png"
+							alt="ABAQUS fine mesh flux contour"
+						/>
+						<figcaption>ABAQUS fine mesh heat flux contour.</figcaption>
+					</figure>
+				</div>
+			</section>
+
+			
+		</main>
+
+		<a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+	</body>
+</html>
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+
+	:global(body) {
+		margin: 0;
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+			sans-serif;
+		color: #1f2933;
+		background: #f7f4ef;
+		line-height: 1.6;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: rgba(247, 244, 239, 0.92);
+		border-bottom: 1px solid #e5dfd3;
+		backdrop-filter: blur(10px);
+	}
+
+	nav {
+		width: 100%;
+		max-width: 1360px;
+		margin: 0 auto;
+		padding: 1rem 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.logo {
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		color: #111827;
+		white-space: nowrap;
+	}
+
+	.nav-links {
+		margin-left: auto;
+		display: flex;
+		gap: 0.75rem;
+		font-size: 0.95rem;
+		font-weight: 700;
+		color: #4b5563;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+	.nav-links a {
+		padding: 0.45rem 0.85rem;
+		border: 1px solid #c9bba6;
+		border-radius: 999px;
+		font-weight: 700;
+		background: #fffaf2;
+		color: #8a5a28;
+		white-space: nowrap;
+		transition:
+			background 0.15s ease,
+			color 0.15s ease,
+			border-color 0.15s ease,
+			transform 0.15s ease;
+	}
+
+	.nav-links a:hover {
+		background: #1f2933;
+		border-color: #1f2933;
+		color: #ffffff;
+		transform: translateY(-1px);
+	}
+
+	main {
+		max-width: 1120px;
+		margin: 0 auto;
+		padding: 0 1.5rem 4rem;
+	}
+
+	.project-hero {
+		padding: 5.5rem 0 3.5rem;
+		max-width: 960px;
+	}
+
+	.back-link {
+		display: inline-block;
+		margin-bottom: 2rem;
+		color: #8a5a28;
+		font-weight: 700;
+	}
+
+	.back-link:hover {
+		color: #111827;
+	}
+
+	.eyebrow {
+		margin: 0 0 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.16em;
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: #8a5a28;
+	}
+
+	h1 {
+		margin: 0;
+		max-width: 1050px;
+		font-size: clamp(2.2rem, 4.2vw, 3.7rem);
+		line-height: 1.08;
+		letter-spacing: -0.04em;
+		color: #111827;
+	}
+
+	.hero-text {
+		max-width: 820px;
+		margin: 1.4rem 0 0;
+		font-size: 1.18rem;
+		color: #4b5563;
+	}
+
+	.project-meta {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	.project-meta div,
+	.stat-card {
+		background: #fffaf2;
+		border: 1px solid #e5dfd3;
+		border-radius: 18px;
+		padding: 1rem;
+	}
+
+	.project-meta span,
+	.stat-card span {
+		display: block;
+		margin-bottom: 0.35rem;
+		font-size: 0.78rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: #8a5a28;
+	}
+
+	.project-meta p {
+		margin: 0;
+		color: #111827;
+		font-size: 1.08rem;
+		font-weight: 800;
+	}
+
+	.stat-card p {
+		margin: 0;
+		color: #4b5563;
+	}
+
+	.stat-card strong {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-size: 1.6rem;
+		line-height: 1.2;
+		color: #111827;
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.section {
+		padding: 3.5rem 0;
+		border-top: 1px solid #e5dfd3;
+	}
+
+	.hero-image-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+		align-items: stretch;
+	}
+
+	.hero-figure {
+		margin: 0;
+		background: #fffaf2;
+		border: 1px solid #e5dfd3;
+		border-radius: 22px;
+		overflow: hidden;
+		box-shadow: 0 12px 30px rgba(31, 41, 51, 0.06);
+	}
+
+	.hero-figure img {
+		display: block;
+		width: 100%;
+		height: 430px;
+		object-fit: contain;
+		background: #ffffff;
+	}
+
+	.hero-figure figcaption {
+		padding: 1rem 1.1rem;
+		color: #4b5563;
+		font-size: 0.95rem;
+	}
+
+	.two-column {
+		display: grid;
+		grid-template-columns: 0.45fr 1fr;
+		gap: 3rem;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 2rem;
+		letter-spacing: -0.03em;
+		color: #111827;
+	}
+
+	p {
+		color: #4b5563;
+	}
+
+	.two-column p:first-child {
+		margin-top: 0;
+	}
+
+	.role-list {
+		margin: 0;
+		padding-left: 1.15rem;
+		color: #4b5563;
+	}
+
+	.role-list li {
+		margin-bottom: 0.5rem;
+	}
+
+	.section-title {
+		margin-bottom: 1.5rem;
+	}
+
+	.section-title h2 {
+		margin-bottom: 0.4rem;
+	}
+
+	.section-title p {
+		margin: 0;
+		color: #6b7280;
+	}
+
+	.gallery-grid,
+	.inline-gallery {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.inline-gallery {
+		margin-top: 1.5rem;
+	}
+
+	figure {
+		margin: 0;
+		background: #fffaf2;
+		border: 1px solid #e5dfd3;
+		border-radius: 22px;
+		overflow: hidden;
+		box-shadow: 0 12px 30px rgba(31, 41, 51, 0.06);
+	}
+
+	figure img {
+		display: block;
+		width: 100%;
+		height: 280px;
+		object-fit: contain;
+		background: #ffffff;
+	}
+
+	figcaption {
+		padding: 1rem 1.1rem;
+		color: #4b5563;
+		font-size: 0.95rem;
+	}
+
+	.back-to-top {
+		position: fixed;
+		right: 1.5rem;
+		bottom: 1.5rem;
+		width: 46px;
+		height: 46px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		border: 1px solid #c9bba6;
+		background: #fffaf2;
+		color: #8a5a28;
+		font-size: 1.4rem;
+		font-weight: 800;
+		box-shadow: 0 10px 24px rgba(31, 41, 51, 0.12);
+		z-index: 20;
+		transition:
+			background 0.15s ease,
+			color 0.15s ease,
+			transform 0.15s ease,
+			box-shadow 0.15s ease;
+	}
+
+	.back-to-top:hover {
+		background: #1f2933;
+		color: #ffffff;
+		transform: translateY(-2px);
+		box-shadow: 0 14px 30px rgba(31, 41, 51, 0.18);
+	}
+
+	@media (max-width: 900px) {
+		.stats-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 760px) {
+		nav {
+			align-items: flex-start;
+			gap: 0.9rem;
+			flex-direction: column;
+			padding: 1rem 1.25rem;
+		}
+
+		.nav-links {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			gap: 0.55rem;
+			width: 100%;
+		}
+
+		.nav-links a {
+			padding: 0.38rem 0.65rem;
+			font-size: 0.82rem;
+			line-height: 1.1;
+		}
+
+		.project-hero {
+			padding: 4.5rem 0 3rem;
+		}
+
+		.project-meta,
+		.two-column,
+		.gallery-grid,
+		.inline-gallery,
+		.stats-grid,
+		.hero-image-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-figure img,
+		figure img {
+			height: 240px;
+		}
+
+		.back-to-top {
+			right: 1rem;
+			bottom: 1rem;
+			width: 42px;
+			height: 42px;
+			font-size: 1.2rem;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.nav-links {
+			gap: 0.5rem;
+		}
+
+		.nav-links a {
+			padding: 0.35rem 0.58rem;
+			font-size: 0.78rem;
+		}
+
+		.logo {
+			font-size: 0.95rem;
+		}
+	}
+</style>
